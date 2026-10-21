@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDEN WOOD - Card Visit Điện Tử</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f8fafc;
+        }
+        .font-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gold-bg {
+            background: linear-gradient(135deg, #FDE047 0%, #D97706 100%);
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #FDE047 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 bg-slate-950 text-slate-100">
+
+    <main class="flex-1 flex items-center justify-center py-4">
+        <!-- Phone Container -->
+        <div class="w-full max-w-[390px] bg-slate-900 rounded-[38px] p-4 border-4 border-slate-800 shadow-2xl shadow-amber-500/10 relative overflow-hidden">
+            
+            <!-- Phone Notch -->
+            <div class="w-28 h-3.5 bg-slate-800 rounded-b-xl mx-auto mb-4 flex items-center justify-center">
+                <div class="w-10 h-1 bg-slate-700 rounded-full"></div>
+            </div>
+
+            <!-- Top Banner -->
+            <div class="relative h-28 rounded-2xl overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 p-4 flex flex-col justify-between border border-slate-700/50">
+                <div class="relative z-10 flex justify-between items-center">
+                    <span class="text-[9px] bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded-full border border-amber-500/30">Xây Dựng và Hoàn Thiện Nội Thất</span>
+                    <div class="w-6 h-6 gold-bg rounded flex items-center justify-center text-slate-950 font-bold text-xs">GW</div>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="font-brand font-bold text-sm text-white tracking-wider">GOLDEN WOOD</h3>
+                    <p class="text-[9px] text-slate-300">Simple is the Best</p>
+                </div>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="px-3 -mt-9 relative z-20 flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-2xl bg-slate-900 border-2 border-amber-400 p-1 shadow-xl flex items-center justify-center text-amber-400 text-3xl font-bold">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <h2 class="font-brand font-bold text-lg text-white mt-2">TỪ ANH VŨ</h2>
+                <p class="text-xs text-amber-400 font-medium mb-1">Quản Lý Kỹ Thuật</p>
+                <p class="text-[11px] text-slate-400 flex items-center gap-1">
+                    <i class="fa-solid fa-building text-amber-400"></i> GOLDEN WOOD
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-4 gap-2 my-4 px-1">
+                <a href="tel:0941922822" class="flex flex-col items-center p-2 bg-slate-800/80 hover:bg-amber-500/20 rounded-xl border border-slate-700 transition text-center">
+                    <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-1">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                    </div>
+                    <span class="text-[9px] text-slate-300 font-medium">Gọi điện</span>
+                </a>
+                <a href="https://zalo.me/0941922822" target="_blank" class="flex flex-col items-center p-2 bg-slate-800/80 hover:bg-blue-500/20 rounded-xl border border-slate-700 transition text-center">
+                    <div class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-1">
+                        <i class="fa-solid fa-comment-dots text-xs"></i>
+                    </div>
+                    <span class="text-[9px] text-slate-300 font-medium">Zalo</span>
+                </a>
+                <a href="https://maps.google.com/?q=45/84+Dân+Lập,+Lê+Chân,+Hải+Phòng" target="_blank" class="flex flex-col items-center p-2 bg-slate-800/80 hover:bg-emerald-500/20 rounded-xl border border-slate-700 transition text-center">
+                    <div class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-1">
+                        <i class="fa-solid fa-location-dot text-xs"></i>
+                    </div>
+                    <span class="text-[9px] text-slate-300 font-medium">Bản đồ</span>
+                </a>
+                <button onclick="downloadVCard()" class="flex flex-col items-center p-2 gold-bg text-slate-950 rounded-xl font-semibold transition text-center shadow-md">
+                    <div class="w-7 h-7 rounded-lg bg-slate-950/20 flex items-center justify-center mb-1">
+                        <i class="fa-solid fa-address-book text-xs"></i>
+                    </div>
+                    <span class="text-[9px] font-bold">Lưu DB</span>
+                </button>
+            </div>
+
+            <!-- Contact List -->
+            <div class="space-y-2 text-xs bg-slate-950/60 p-3 rounded-2xl border border-slate-800/80">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-amber-400 w-4 text-center"></i>
+                        <span id="email-text" class="text-slate-300 text-[11px]">Never.sofa2011@gmail.com</span>
+                    </div>
+                    <button onclick="copyText('email-text')" class="text-[10px] text-amber-400 hover:underline">Copy</button>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-amber-400 w-4 text-center"></i>
+                        <span class="text-slate-300 text-[11px]">Profile</span>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1lysz-A2LXi8cxgNtJ-acToK3Dk7QQ3u2/view?usp=drive_link" target="_blank" class="text-[10px] text-amber-400 hover:underline">Mở</a>
+                </div>
+
+                <div class="flex items-start gap-2 p-2 rounded-lg bg-slate-900/60">
+                    <i class="fa-solid fa-map-pin text-amber-400 w-4 text-center mt-0.5"></i>
+                    <div class="text-[11px] text-slate-300">
+                        <p>45/84 Dân Lập, Lê Chân, Hải Phòng</p>
+                        <p class="text-[9px] text-slate-500 mt-0.5">VPĐD và Nhà Máy sản xuất</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Highlights -->
+            <div class="mt-4">
+                <p class="text-[11px] font-semibold text-slate-400 mb-2 flex items-center justify-between">
+                    <span><i class="fa-solid fa-couch text-amber-400 mr-1"></i> Lĩnh Vực Hoạt Động</span>
+                    <span class="text-[9px] text-slate-500">Golden Wood</span>
+                </p>
+                <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <div class="w-28 shrink-0 bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="https://6ad81706d9feb8b36628d0c8.imgix.net/sandbox/06.jpg?auto=format&fit=crop&w=300&q=80" alt="Hoàn Thiện Nội Thất" class="h-16 w-full object-cover">
+                        <p class="p-1.5 text-[9px] font-medium text-slate-300 truncate">Hoàn Thiện Nội Thất</p>
+                    </div>
+                    <div class="w-28 shrink-0 bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="https://6ad81706d9feb8b36628d0c8.imgix.net/sandbox/08.jpg?auto=format&fit=crop&w=300&q=80" alt="Tủ Bếp Cao Cấp" class="h-16 w-full object-cover">
+                        <p class="p-1.5 text-[9px] font-medium text-slate-300 truncate">Tủ Bếp Cao Cấp</p>
+                    </div>
+                    <div class="w-28 shrink-0 bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+                        <img src="https://6ad81706d9feb8b36628d0c8.imgix.net/sandbox/z3349601470784_6fe19a3d6e5bf533bd108cd904e608af.jpg?auto=format&fit=crop&w=300&q=80" alt="Xây Nhà Trọn Gói" class="h-16 w-full object-cover">
+                        <p class="p-1.5 text-[9px] font-medium text-slate-300 truncate">Xây Nhà Trọn Gói</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer QR -->
+            <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between px-2">
+                <div class="text-left">
+                    <p class="text-[10px] font-bold text-white">Quét mã vCard</p>
+                    <p class="text-[9px] text-slate-400">Lưu danh bạ tức thì</p>
+                </div>
+                <div id="qrcode" class="bg-white p-1 rounded-lg"></div>
+            </div>
+
+            <!-- Share Button -->
+            <div class="mt-3">
+                <button onclick="copyShareLink()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 rounded-xl border border-slate-700 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-share-nodes text-amber-400"></i> Chia Sẻ Card Visit
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 hidden p-3 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 rounded-xl text-xs flex items-center gap-2 shadow-xl backdrop-blur-md">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-msg">Đã sao chép!</span>
+    </div>
+
+    <footer class="text-center text-[11px] text-slate-500 py-2">
+        <p>© GOLDEN WOOD</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // Keep the vCard data concise for QR code generation to prevent 'code length overflow'
+            const qrVCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:TRỊNH XUÂN TRƯỜNG\nORG:GOLDEN WOOD\nTEL:0941922882\nEMAIL:Never.sofa2011@gmail.com\nEND:VCARD`;
+            
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = ''; // Clear container
+
+            try {
+                new QRCode(qrContainer, {
+                    text: qrVCardData,
+                    width: 52,
+                    height: 52,
+                    colorDark : "#0f172a",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.L // Lower error correction allows larger capacity
+                });
+            } catch (err) {
+                console.warn("Falling back to URL QR code due to size overflow:", err);
+                // Fallback to simpler string if standard vCard still exceeds limit
+                new QRCode(qrContainer, {
+                    text: "TEL:0941922822",
+                    width: 52,
+                    height: 52,
+                    colorDark : "#0f172a",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.L
+                });
+            }
+        };
+
+        function downloadVCard() {
+            const vCardContent = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:TRỊNH XUÂN TRƯỜNG
+TITLE:Phụ Trách Kinh Doanh
+ORG:GOLDEN WOOD
+TEL;TYPE=CELL,VOICE:0941922822
+EMAIL;TYPE=WORK:Never.sofa2011@gmail.com
+URL:www.goldenwood.vn
+ADR;TYPE=WORK:;;45/84 Dan Lap, Le Chan;Hai Phong;;;Vietnam
+NOTE:Golden Wood (VPĐD và Nhà máy sản xuất)
+END:VCARD`;
+
+            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `Trinh_Xuan_Truong_GoldenWood.vcf`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showToast('Đã tải xuống danh bạ vCard!');
+        }
+
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            copyToClipboard(text);
+            showToast('Đã sao chép: ' + text);
+        }
+
+        function copyShareLink() {
+            copyToClipboard(window.location.href);
+            showToast('Đã sao chép liên kết Card!');
+        }
+
+        function copyToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
